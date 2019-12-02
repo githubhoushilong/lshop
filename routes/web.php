@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@root')->name('root');
+// Route::get('/', 'PagesController@root')->name('root')->middleware('verified');//测试中间件
+Route::get('/', 'PagesController@root')->name('root');//首页路由
 
-Auth::routes();//laravel认证路由
+Auth::routes(['verify' => true]);//laravel认证路由,括号里为添加的邮箱验证
