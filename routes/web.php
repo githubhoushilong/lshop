@@ -21,4 +21,7 @@ Auth::routes(['verify' => true]);//laravel认证路由,括号里为添加的邮�
 //auth中间件代表需要登陆，verified中间件代表需要经过邮箱验证
 Route::group(['middleware' => ['auth', 'verified']], function(){
     Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
+
+    Route::post('products/{product}/favorite', 'ProductsController@favor')->name('products.favor');
+    Route::delete('products/{product}/favorite', 'ProductsController@disfavor')->name('products.disfavor');
 });
