@@ -20,7 +20,6 @@ class CreateCartItemsTable extends Migration
             $table->unsignedBigInteger('product_sku_id');
             $table->foreign('product_sku_id')->references('id')->on('product_skus')->onDelete('cascade');
             $table->unsignedInteger('amount');
-            $table->timestamps();
         });
     }
 
